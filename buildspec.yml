@@ -1,14 +1,16 @@
-version: 1.0
+version: 1
 frontend:
   phases:
     preBuild:
       commands:
-        - npm install
+        - nvm install 18.19.1  # Install a compatible Node.js version
+        - nvm use 18.19.1
+        - yarn install
     build:
       commands:
-        - npm run build --prod
+        - yarn build --prod
   artifacts:
-    baseDirectory: dist/meb-fe  # Replace with the correct app folder name
+    baseDirectory: dist/meb-fe
     files:
       - '**/*'
   cache:
