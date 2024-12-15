@@ -1,16 +1,14 @@
-version: 1
+version: 1.0
 frontend:
   phases:
     preBuild:
       commands:
-        - echo "Installing dependencies"
-        - yarn install
+        - npm install
     build:
       commands:
-        - echo "Building the static site"
-        - yarn build
+        - npm run build --prod
   artifacts:
-    baseDirectory: build   # Output directory for React
+    baseDirectory: dist/meb-fe  # Replace with the correct app folder name
     files:
       - '**/*'
   cache:
