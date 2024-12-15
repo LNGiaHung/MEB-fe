@@ -1,0 +1,18 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - echo "Using Node.js version 20.11.1"
+        - nvm install 20.11.1
+        - nvm use 20.11.1
+        - node -v
+        - yarn install
+    build:
+      commands:
+        - echo "Building the application..."
+        - yarn build
+  artifacts:
+    baseDirectory: build
+    files:
+      - '**/*'
